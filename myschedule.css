@@ -1,0 +1,47 @@
+.nav-container {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: #7acfe4;
+	width: 100%;
+    z-index: 1000;
+}
+
+.nav-container ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row-reverse;
+} 
+
+.nav-container li {
+    list-style: none;
+    margin: 2em 2em 1em 4em;
+}
+
+body{
+    padding-top: 3em;
+}
+.schedule-picture-container{
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+.schedule-table, th, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+#gym-exercise {
+    background: green;
+}
+
+/* tr{
+    font-size: green;
+} */
