@@ -47,8 +47,7 @@ def submission_to_table(item):
                 <th><a href="{item["url"]}">{item["event"]} info</a></th>
             </tr>
         """)
-    pass
-# "myImg\flag.png"
+
 myImages = {
     "/myImg/flag.png" : "image/png",
     "/myImg/map.png" : "image/png",
@@ -59,8 +58,6 @@ myImages = {
     "/myImg/with_my_dawg.jpg" : "image/jpg",
     "/myImg/skii.mp4" : "video/mp4",
 }
-# myImages = {
-# }
 
 # NOTE: Please read the updated function carefully, as it has changed from the
 # version in the previous homework. It has important information in comments
@@ -152,7 +149,7 @@ def handle_req(url, body=None):
                 <head>
                     <meta charset="UTF-8">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>MY Weekly Schedule</title>
+                    <title>event Log</title>
                     <link rel="stylesheet" href="EventLog.css">
                 </head>
                 <body>

@@ -72,8 +72,8 @@ border: 1px solid black;
 .box {
     margin: 2px;
     padding: 2px;
-    width: 400px;
-    height: auto;
+    max-width: 400px;
+    max-height: 400px;
     border: 2px solid black;
 }
 .box-half {
@@ -85,16 +85,22 @@ border: 1px solid black;
 }
 
 .FourbyFiveImg{
+    max-width: 400px;
+    max-height: 400px;
     width: 80%; 
     height: 100%;
 }
 
 .FivebyFourImg{
+    max-width: 400px;
+    max-height: 400px;
     width: 100%; 
     height: 80%;
 }
 
 .OnebyOneImg{
+    max-width: 400px;
+    max-height: 400px;
     width: 100%; 
     height: 100%;
 }
