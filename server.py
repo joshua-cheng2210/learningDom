@@ -36,7 +36,19 @@ def submission_to_table(item):
     }
     """
     pass
-
+# "myImg\flag.png"
+myImages = {
+    "/myImg/flag.png" : "image/png",
+    "/myImg/map.png" : "image/png",
+    "/myImg/my dog sunbathing.jpg" : "image/jpg",
+    "/myImg/travel.jpg" : "image/jpg",
+    "/myImg/washington_back.jpg" : "image/jpg",
+    "/myImg/washington.jpg" : "image/jpg",
+    "/myImg/with_my_dawg.jpg" : "image/jpg",
+    "/myImg/skii.mp4" : "video/mp4",
+}
+# myImages = {
+# }
 
 # NOTE: Please read the updated function carefully, as it has changed from the
 # version in the previous homework. It has important information in comments
@@ -59,12 +71,29 @@ def handle_req(url, body=None):
     # Parse any form parameters submitted via POST
     parameters = get_body_params(body)
 
-    if url == "/myschedule.html":
-        return open("static/html/myschedule.html").read(), "text/html"
-    if url == "/myform.html":
-        return open("static/html/myform.html").read(), "text/html"
-    elif url == "/aboutme.html":
+    # for aboutme
+    if url == "/aboutme.html":
         return open("static/html/aboutme.html").read(), "text/html"
+    elif url == "/aboutme.css":
+        return open("static/css/aboutme.css").read(), "text/css"
+    # for myschedule
+    elif url == "/myschedule.html":
+        return open("static/html/myschedule.html").read(), "text/html"
+    elif url == "/myschedule.js":
+        return open("static/js/myschedule.js").read(), "text/javascript"
+    elif url == "/myschedule.css":
+        return open("static/css/myschedule.css").read(), "text/css"
+    # for myform
+    elif url == "/myform.html":
+        return open("static/html/myform.html").read(), "text/html"
+    elif url == "/myform.js":
+        return open("static/js/myform.js").read(), "text/javascript"
+    elif url == "/myform.css":
+        return open("static/css/myform.css").read(), "text/css"
+    # others
+    elif url in myImages:
+        # print("url ---->>>", url)
+        return open(url[1:], "br").read(), myImages[url]
     elif url == "/img/gophers-mascot.png":
         return open("static/img/gophers-mascot.png", "br").read(), "image/png"
     # NOTE: The files you return will likely be different for your server, but the code to
@@ -210,6 +239,7 @@ class RequestHandler(BaseHTTPRequestHandler):
 def run():
     PORT = 4131
     print(f"Starting server http://localhost:{PORT}/")
+    # print(myImages)
     server = ("", PORT)
     httpd = HTTPServer(server, RequestHandler)
     httpd.serve_forever()

@@ -10,6 +10,9 @@
     background-color: #7acfe4;
 	width: 100%;
     z-index: 1000;
+    /* height: 5em; */
+	/* margin: 0 auto; */
+    /* float: right; */
 }
 
 .nav-container ul {
@@ -21,27 +24,18 @@
 } 
 
 .nav-container li {
+    /* display: inline-block; */
     list-style: none;
+    /* margin-left: 4em;
+    margin-right: 2em;
+    margin-top: 2em;
+    margin-bottom: 1em; */
     margin: 2em 2em 1em 4em;
+    /* float: right; */
+  
+    /* position: relative; */
 }
 
 body{
     padding-top: 3em;
 }
-.schedule-picture-container{
-    display: grid;
-    grid-template-columns: 75% 25%;
-}
-
-.schedule-table, th, td {
-    border-collapse: collapse;
-    border: 1px solid black;
-}
-
-/* #gym-exercise {
-    background: green;
-} */
-
-/* tr{
-    font-size: green;
-} */

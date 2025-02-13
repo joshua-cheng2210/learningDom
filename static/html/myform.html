@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my Form</title>
+    <link rel="stylesheet" href="/myform.css">
+</head>
+<body>
+    <!-- navigation bar -->
+    <div>
+        <nav class="nav-container">
+            <nav>
+              <ul>
+                <li><a href="aboutme.html">About Me</a></li>
+                <li><a href="myschedule.html">mySchedule</a></li>
+                <li><a href="myform.html">myForm</a></li>
+              </ul>
+            </nav>
+        </nav>
+    </div>
+    <!-- form to fill -->
+    <div class="filling-form">
+        <h1>update Schedule</h1>
+        <form action="/add_event" method="post" onsubmit="return validateForm()">
+            <label for="days">Day: *</label>
+            <select id="day" name="day" required>
+                <option value="Sunday">Sunday</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+            </select><br>
+
+            <label for="event">Event: *</label>
+            <input type="text" id="event" name="event" required><br>
+
+            <label>Start Time:</label>
+            <select id="start-hour" name="start-hour" required></select> :
+            <select id="start-minute" name="start-minute" required></select><br>
+
+            <label>End Time:</label>
+            <select id="end-hour" name="end-hour" required></select> :
+            <select id="end-minute" name="end-minute" required></select><br>
+
+            <label for="location">Event Location (Virtual or Physical): *</label>
+            <input type="text" id="location" name="location" required><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone"><br>
+
+            <label for="url">URL:</label>
+            <input type="url" id="url" name="url"><br><br>
+
+            <input type="submit" value="Add Event">
+
+            <script src="myform.js"></script>
+        </form>
+    </div>
+</body>
+</html>
