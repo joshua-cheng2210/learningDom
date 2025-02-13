@@ -40,6 +40,16 @@ body{
     padding-top: 3em;
 }
 
+.title-clock{
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+.clock{
+    margin-top:20px; 
+    padding-left: 10px;
+}
+
 table {
     border-collapse: collapse;
 }
@@ -66,3 +76,17 @@ border: 1px solid black;
     border: 2px solid black;
 }
 
+.FourbyFiveImg{
+    width: 80%; 
+    height: 100%;
+}
+
+.FivebyFourImg{
+    width: 100%; 
+    height: 80%;
+}
+
+.OnebyOneImg{
+    width: 100%; 
+    height: 100%;
+}

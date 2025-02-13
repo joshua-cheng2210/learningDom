@@ -1,6 +1,10 @@
 function populateTimeOptions() {
-    const hours = [...Array(24).keys()].map((hour) => (hour.toString().padStart(2, '0')));
-    const minutes = [...Array(60).keys()].map((minute) => (minute.toString().padStart(2, '0')));
+    const hours = [...Array(24).keys()].map((hour) => (
+        hour.toString().padStart(2, '0'))
+    );
+    const minutes = [...Array(60).keys()].map((minute) => (
+        minute.toString().padStart(2, '0'))
+    );
 
     const startHourSelect = document.getElementById('start-hour');
     const startMinuteSelect = document.getElementById('start-minute');

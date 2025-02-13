@@ -74,6 +74,8 @@ def handle_req(url, body=None):
     # for aboutme
     if url == "/aboutme.html":
         return open("static/html/aboutme.html").read(), "text/html"
+    if url == "/aboutme.js":
+        return open("static/js/aboutme.js").read(), "text/javascript"
     elif url == "/aboutme.css":
         return open("static/css/aboutme.css").read(), "text/css"
     # for myschedule
