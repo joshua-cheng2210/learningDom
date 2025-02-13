@@ -23,7 +23,7 @@
     <div class="filling-form">
         <h1>update Schedule</h1>
         <form action="/add_event" method="post" onsubmit="return validateForm()">
-            <label for="days">Day: *</label>
+            <label for="days">Day:option</label>
             <select id="day" name="day" required>
                 <option value="Sunday">Sunday</option>
                 <option value="Monday">Monday</option>
@@ -34,7 +34,7 @@
                 <option value="Saturday">Saturday</option>
             </select><br>
 
-            <label for="event">Event: *</label>
+            <label for="event">Event:option</label>
             <input type="text" id="event" name="event" required><br>
 
             <label>Start Time:</label>
@@ -45,14 +45,20 @@
             <select id="end-hour" name="end-hour" required></select> :
             <select id="end-minute" name="end-minute" required></select><br>
 
-            <label for="location">Event Location (Virtual or Physical): *</label>
+            <label for="location">Event Location (Virtual or Physical):option</label>
             <input type="text" id="location" name="location" required><br>
 
             <label for="phone">Phone Number:</label>
-            <input type="text" id="phone" name="phone"><br>
+            <input type="text" id="phone" name="phone" required><br>
 
-            <label for="url">URL:</label>
-            <input type="url" id="url" name="url"><br><br>
+            <label for="url">event info URL:</label>
+            <input type="url" id="url" name="url" required><br>
+
+            <label for="hoverIMG">URL of event picture to show when hover:</label>
+            <input type="url" id="hoverIMG" name="data-thumbnail" required><br>
+
+            <label for="hoverIMG">alt for the picture:</label>
+            <input type="text" id="hoverIMG-alt" name="data-thumbnail-alt" required><br>
 
             <input type="submit" value="Add Event">
 
