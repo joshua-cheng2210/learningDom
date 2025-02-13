@@ -104,8 +104,8 @@ def handle_req(url, body=None):
         return open("static/css/myform.css").read(), "text/css"
     # others
     elif url in myImages:
-        # print("url ---->>>", url)
-        return open(url[1:], "br").read(), myImages[url]
+        # print("url ---->>>", url[4:], f"static/i{url[4:]}")
+        return open(f"static/i{url[4:]}", "br").read(), myImages[url]
     elif url == "/img/gophers-mascot.png":
         return open("static/img/gophers-mascot.png", "br").read(), "image/png"
     # NOTE: The files you return will likely be different for your server, but the code to

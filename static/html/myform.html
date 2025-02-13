@@ -27,9 +27,10 @@
 
             <table>
                 <tr>
-                    <th><label for="days">Day</label></th>
+                    <th><label for="day">Day</label></th>
                     <th>
                         <select id="day" name="day" required>
+                        <option value="" disabled selected>Select a day</option>
                         <option value="Sun">Sunday</option>
                         <option value="Mon">Monday</option>
                         <option value="Tue">Tuesday</option>
@@ -63,7 +64,7 @@
 
                 <tr>
                     <th><label for="phone">Phone Number:</label></th>
-                    <th><input type="text" id="phone" name="phone"  pattern="[0-9]+{10,10}" name="event" title="Phone number must contain 10 digits" required></th>
+                    <th><input type="text" id="phone" name="phone"  pattern="[0-9]+{10,10}" title="Phone number must contain 10 digits" required></th>
                 </tr>
 
                 <tr>
