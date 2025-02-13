@@ -53,8 +53,9 @@ body{
 }
 
 .clock{
-    margin-top:20px; 
+    margin-top:30px; 
     padding-left: 10px;
+    width: auto;
 }
 
 table {
@@ -72,7 +73,7 @@ border: 1px solid black;
     margin: 2px;
     padding: 2px;
     width: 400px;
-    height: 400px;
+    height: auto;
     border: 2px solid black;
 }
 .box-half {

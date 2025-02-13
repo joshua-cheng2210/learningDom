@@ -22,46 +22,62 @@
     <!-- form to fill -->
     <div class="filling-form">
         <h1>update Schedule</h1>
-        <form action="/add_event" method="post" onsubmit="return validateForm()">
-            <label for="days">Day:option</label>
-            <select id="day" name="day" required>
-                <option value="Sunday">Sunday</option>
-                <option value="Monday">Monday</option>
-                <option value="Tuesday">Tuesday</option>
-                <option value="Wednesday">Wednesday</option>
-                <option value="Thursday">Thursday</option>
-                <option value="Friday">Friday</option>
-                <option value="Saturday">Saturday</option>
-            </select><br>
 
-            <label for="event">Event:option</label>
-            <input type="text" id="event" name="event" required><br>
+        <form action="/EventLog.html" method="post" onsubmit="return validateForm()">
 
-            <label>Start Time:</label>
-            <select id="start-hour" name="start-hour" required></select> :
-            <select id="start-minute" name="start-minute" required></select><br>
+            <table>
+                <tr>
+                    <th><label for="days">Day</label></th>
+                    <th>
+                        <select id="day" name="day" required>
+                        <option value="Sun">Sunday</option>
+                        <option value="Mon">Monday</option>
+                        <option value="Tue">Tuesday</option>
+                        <option value="Wed">Wednesday</option>
+                        <option value="Thu">Thursday</option>
+                        <option value="Fri">Friday</option>
+                        <option value="Sat">Saturday</option>
+                        </select>
+                        
+                    </th>
+                </tr>
 
-            <label>End Time:</label>
-            <select id="end-hour" name="end-hour" required></select> :
-            <select id="end-minute" name="end-minute" required></select><br>
+                <tr>
+                    <th><label for="event">Event</label></th>
+                    <th><input type="text" id="event" pattern="[A-Za-z0-9\s]+" name="event" title="Event must be alphanumeric" required></th>
+                </tr>
 
-            <label for="location">Event Location (Virtual or Physical):option</label>
-            <input type="text" id="location" name="location" required><br>
+                <tr>
+                    <th><label for="startTime">Start Time:</label></th>
+                    <th><input id="startTime" name="startTime" type="time" required></th>
+                </tr>
+                <tr>
+                    <th><label for="endTime">End Time:</label></th>
+                    <th><input id="endTime" name="endTime" type="time" required></th>
+                </tr>
 
-            <label for="phone">Phone Number:</label>
-            <input type="text" id="phone" name="phone" required><br>
+                <tr>
+                    <th><label for="location">Event Location (Virtual or Physical):</label></th>
+                    <th><input type="text" id="location" pattern="[A-Za-z0-9\s]+" name="location" title="Event must be alphanumeric" required></th>
+                </tr>
 
-            <label for="url">event info URL:</label>
-            <input type="url" id="url" name="url" required><br>
+                <tr>
+                    <th><label for="phone">Phone Number:</label></th>
+                    <th><input type="text" id="phone" name="phone"  pattern="[0-9]+{10,10}" name="event" title="Phone number must contain 10 digits" required></th>
+                </tr>
 
-            <label for="hoverIMG">URL of event picture to show when hover:</label>
-            <input type="url" id="hoverIMG" name="data-thumbnail" required><br>
+                <tr>
+                    <th><label for="url">event info URL:</label></th>
+                    <th><input type="url" id="url" name="url" required></th>
+                </tr>
 
-            <label for="hoverIMG">alt for the picture:</label>
-            <input type="text" id="hoverIMG-alt" name="data-thumbnail-alt" required><br>
+                <tr>
+                    <th></th>
+                    <th><input class="submit-button" type="submit" value="Add Event"></th>
+                </tr>
 
-            <input type="submit" value="Add Event">
-
+            </table>
+            
             <script src="myform.js"></script>
         </form>
     </div>

@@ -9,7 +9,7 @@ let myscheduleDB = [
         "Event Location (Virtual or Physical)": "anderson hall",
         "Phone Number": "No Phone number",
         "link": "https://umtc.catalog.prod.coursedog.com/courses/7906541",
-        "data-thumbnail": "https://cdn-icons-png.flaticon.com/512/9414/9414296.png",
+        "data-thumbnail": "/img/Anderson.jpg",
         "data-thumbnail-alt": "web dev"
     },
     {
@@ -19,10 +19,10 @@ let myscheduleDB = [
         "start minute": 0,
         "end hour": 14,
         "end minute": 15,
-        "Event Location (Virtual or Physical)": "amundson hall",
+        "Event Location (Virtual or Physical)": "Bruininks hall",
         "Phone Number": "No Phone number",
         "link": "https://umtc.catalog.prod.coursedog.com/courses/0002431",
-        "data-thumbnail": "https://media.tenor.com/xd3erlw5b5UAAAAM/lies-mass.gif",
+        "data-thumbnail": "/img/Bruininks.jpg",
         "data-thumbnail-alt": "social media journalism"
     },
     {
@@ -32,10 +32,10 @@ let myscheduleDB = [
         "start minute": 0,
         "end hour": 14,
         "end minute": 15,
-        "Event Location (Virtual or Physical)": "amundson hall",
+        "Event Location (Virtual or Physical)": "Bruininks hall",
         "Phone Number": "No Phone number",
         "link": "https://umtc.catalog.prod.coursedog.com/courses/7906551",
-        "data-thumbnail": "https://i.gifer.com/6Je7.gif",
+        "data-thumbnail": "/img/Bruininks.jpg",
         "data-thumbnail-alt": "computer networking"
     },
     {
@@ -48,7 +48,7 @@ let myscheduleDB = [
         "Event Location (Virtual or Physical)": "cooke hall 308",
         "Phone Number": "No Phone number",
         "link": "https://umtc.catalog.prod.coursedog.com/courses/0026611",
-        "data-thumbnail": "https://64.media.tumblr.com/58d58d03adf159a56a33261ac0a525d7/tumblr_p347tfSpdv1svxf0ao1_1280.gif",
+        "data-thumbnail": "/img/rec.jpg",
         "data-thumbnail-alt": "fencing"
     },
     {
@@ -61,7 +61,7 @@ let myscheduleDB = [
         "Event Location (Virtual or Physical)": "anderson hall",
         "Phone Number": "No Phone number",
         "link": "https://umtc.catalog.prod.coursedog.com/courses/7906541",
-        "data-thumbnail": "https://cdn-icons-png.flaticon.com/512/9414/9414296.png",
+        "data-thumbnail": "/img/Anderson.jpg",
         "data-thumbnail-alt": "web dev"
     },
     {
@@ -71,10 +71,10 @@ let myscheduleDB = [
         "start minute": 0,
         "end hour": 14,
         "end minute": 15,
-        "Event Location (Virtual or Physical)": "amundson hall",
+        "Event Location (Virtual or Physical)": "Bruininks hall",
         "Phone Number": "No Phone number",
         "link": "https://umtc.catalog.prod.coursedog.com/courses/0002431",
-        "data-thumbnail": "https://media.tenor.com/xd3erlw5b5UAAAAM/lies-mass.gif",
+        "data-thumbnail": "/img/Bruininks.jpg",
         "data-thumbnail-alt": "social media journalism"
     },
     {
@@ -84,10 +84,10 @@ let myscheduleDB = [
         "start minute": 0,
         "end hour": 14,
         "end minute": 15,
-        "Event Location (Virtual or Physical)": "amundson hall",
+        "Event Location (Virtual or Physical)": "Bruininks hall",
         "Phone Number": "No Phone number",
         "link": "https://umtc.catalog.prod.coursedog.com/courses/7906551",
-        "data-thumbnail": "https://i.gifer.com/6Je7.gif",
+        "data-thumbnail": "/img/Bruininks.jpg",
         "data-thumbnail-alt": "computer networking"
     },
     {
@@ -100,7 +100,7 @@ let myscheduleDB = [
         "Event Location (Virtual or Physical)": "cooke hall 308",
         "Phone Number": "No Phone number",
         "link": "https://umtc.catalog.prod.coursedog.com/courses/0026611",
-        "data-thumbnail": "https://64.media.tumblr.com/58d58d03adf159a56a33261ac0a525d7/tumblr_p347tfSpdv1svxf0ao1_1280.gif",
+        "data-thumbnail": "/img/rec.jpg",
         "data-thumbnail-alt": "fencing"
     },
     {
@@ -113,7 +113,7 @@ let myscheduleDB = [
         "Event Location (Virtual or Physical)": "byonton",
         "Phone Number": "No Phone number",
         "link": "https://mcrlab.umn.edu",
-        "data-thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKvMvFuNBpbCRSdg_zVGlr26jpH35NIVQfjQ&s",
+        "data-thumbnail": "/img/childrens_rehab.jpg",
         "data-thumbnail-alt": "lab work"
     },
     {
@@ -126,7 +126,7 @@ let myscheduleDB = [
         "Event Location (Virtual or Physical)": "the rec",
         "Phone Number": "No Phone number",
         "link": "https://recwell.umn.edu/",
-        "data-thumbnail": "https://cdn.shopify.com/s/files/1/0720/1079/3270/files/transform_gym_denver.png?v=1721095735",
+        "data-thumbnail": "/img/rec.jpg",
         "data-thumbnail-alt": "gym"
     },
     {
@@ -144,8 +144,8 @@ let myscheduleDB = [
     }
 ];
 
-function changeScheduleIMG(url, alt) {
-    var theimage = document.getElementById("schedule-image");
+function changeScheduleIMG(id, url, alt) {
+    var theimage = document.getElementById(id);
     theimage.src = url;
     theimage.alt = alt;
 }
@@ -155,12 +155,15 @@ function populateScheduleTable() {
     myscheduleDB.forEach(event => {
         const row = document.createElement('tr');
         row.classList.add('schedule-row');
-        row.setAttribute('onmouseover', `changeScheduleIMG('${event["data-thumbnail"]}', '${event["data-thumbnail-alt"]}')`);
+        row.setAttribute('onmouseover', `changeScheduleIMG('schedule-image', '${event["data-thumbnail"]}', '${event["data-thumbnail-alt"]}')`);
         row.innerHTML = `
             <th>${event.Day}</th>
             <th>${event.Event}</th>
             <th>${event["start hour"]}:${event["start minute"].toString().padStart(2, '0')} - ${event["end hour"]}:${event["end minute"].toString().padStart(2, '0')}</th>
-            <th>${event["Event Location (Virtual or Physical)"]}</th>
+            <th>
+                ${event["Event Location (Virtual or Physical)"]}
+                <br>
+                <img src="${event["data-thumbnail"]}" alt="${event["data-thumbnail-alt"]}" class="location-thumbnail"></th>
             <th>${event["Phone Number"]}</th>
             <th><a href="${event.link}">${event.Event} Info</a></th>
         `;

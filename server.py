@@ -21,6 +21,8 @@ def get_body_params(body):
 
 
 def submission_to_table(item):
+    print("printing from submission_to_table function: ", item)
+    # example input: Parsed parameters as: {'day': 'Sun', 'event': 'y4', 'start-time': '16:21', 'end-time': '19:21', 'phone': '7634772445', 'url': 'https://google.com'}
     """TODO: Takes a dictionary of form parameters and returns an HTML table row
        The HTML row will be in the same format as a row on your schedule
 
@@ -35,6 +37,16 @@ def submission_to_table(item):
      'url': 'https://example.com'
     }
     """
+    return (f"""
+            <tr class="schedule-row">
+                <th>{item["day"]}</th>
+                <th>{item["event"]}</th>
+                <th>{item["startTime"]} - {item["endTime"]}</th>
+                <th>anderson hall</th>
+                <th>{item["phone"]}</th>
+                <th><a href="{item["url"]}">{item["event"]} info</a></th>
+            </tr>
+        """)
     pass
 # "myImg\flag.png"
 myImages = {
@@ -65,6 +77,7 @@ def handle_req(url, body=None):
     This function should return two strings in a list or tuple. The first is the
     content to return, and the second is the content-type.
     """
+    # print("printing from handle_rq the body:", body)
 
     # Get rid of any query string parameters
     url, *_ = url.split("?", 1)
@@ -111,8 +124,12 @@ def handle_req(url, body=None):
         return open("static/img/Dan1.jpeg", "br").read(), "image/jpeg"
     elif url == "/img/Anderson.jpg":
         return open("static/img/Anderson.jpg", "br").read(), "image/jpeg"
-    elif url == "/img/Bruininks.png":
-        return open("static/img/Bruininks.png", "br").read(), "image/png"
+    elif url == "/img/childrens_rehab.jpg":
+        return open("static/img/childrens_rehab.jpg", "br").read(), "image/jpeg"
+    elif url == "/img/rec.jpg":
+        return open("static/img/rec.jpg", "br").read(), "image/jpeg"
+    elif url == "/img/Bruininks.jpg":
+        return open("static/img/Bruininks.jpg", "br").read(), "image/jpeg"
     elif url == "/img/Lind.png":
         return open("static/img/Lind.png", "br").read(), "image/png"
     elif url == "/img/zoom.jpg":
@@ -125,48 +142,55 @@ def handle_req(url, body=None):
         return open("static/img/track.jpg", "br").read(), "image/jpeg"
     # TODO: Add update the HTML below to match your other pages and
     # implement the `submission_to_table`.
+    elif url == "/EventLog.css":
+        return open("static/css/EventLog.css").read(), "text/css"
     elif url == "/EventLog.html":
         return (
-            """
-        <!DOCTYPE html>
-        <html lang="en">
-            <head>
-                <title> Event Submission </title>
-            </head>
-            <body>
-                <header>
-                  <nav>
-                    <!-- TODO: Update to appear like the navigation in your other
-                    pages if needed -->
-                      <a href="/myschedule.html">My Schedule</a>
-                      <a href="/myform.html">Form Input</a>
-                      <a href="/aboutme.html">About Me</a>
-                  </nav>
-                </header>
-                <h1> My New Events </h1>
-                <div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Event</th>
-                                <th>Day</th>
-                                <th>Start</th>
-                                <th>End</th>
-                                <th>Phone</th>
-                                <th>Location</th>
-                                <th>URL</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        """
-            + submission_to_table(parameters)
-            + """
-                        </tbody>
-                    </table>
-                </div>
-            </body>
-            </html>""",
-            "text/html; charset=utf-8",
+            f"""
+            <!DOCTYPE html>
+            <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>MY Weekly Schedule</title>
+                    <link rel="stylesheet" href="EventLog.css">
+                </head>
+                <body>
+                    <header>
+                        <div>
+                            <nav class="nav-container">
+                                <nav>
+                                <ul>
+                                    <li><a href="aboutme.html">About Me</a></li>
+                                    <li><a href="myschedule.html">mySchedule</a></li>
+                                    <li><a href="myform.html">myForm</a></li>
+                                </ul>
+                                </nav>
+                            </nav>
+                        </div>
+                    </header>
+                    <h1> My New Events </h1>
+                    <div class="schedule-picture-container" >
+                        <table class="schedule-table">
+                            <thead class="schedule-head">
+                                <tr class="schedule-row">
+                                    <th>Day</th>
+                                    <th>Event</th>
+                                    <th>Time</th>
+                                    <th>Event Location (Virtual or Physical)</th>
+                                    <th>Phone Number</th>
+                                    <th>URL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {submission_to_table(parameters)}
+                            </tbody>
+                        </table>
+                    </div>
+                </body>
+                </html>
+                """,
+                "text/html; charset=utf-8",
         )
     else:
         return open("static/html/404.html").read(), "text/html; charset=utf-8"

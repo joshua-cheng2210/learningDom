@@ -18,7 +18,7 @@
             </nav>
         </nav>
     </div>
-    <h1>My Schedule</h1>
+    <h1>My Weekly Schedule</h1>
     <div class="schedule-picture-container" >
         <table class="schedule-table">
             <thead class="schedule-head">
@@ -32,16 +32,17 @@
                 </tr>
             </thead>
             
-            <tr class="schedule-row" onmouseover="changeScheduleIMG(this.getAttribute('data-thumbnail'), this.getAttribute('data-thumbnail-alt'))" data-thumbnail="https://cdn-icons-png.flaticon.com/512/9414/9414296.png" data-thumbnail-alt="web dev">
+            <tr class="schedule-row" onmouseover="changeScheduleIMG('schedule-image', this.getAttribute('data-thumbnail'), this.getAttribute('data-thumbnail-alt'))" data-thumbnail="/img/Anderson.jpg" data-thumbnail-alt="web dev">
                 <th>Monday</th>
                 <th>CSCI 4131 lec</th>
                 <th>11:15am - 12:30pm</th>
-                <th>anderson hall</th>
+                <th>anderson hall<br><img src="/img/Anderson.jpg" class="location-thumbnail"></th>
                 <th>No Phone number</th>
                 <th><a href="https://umtc.catalog.prod.coursedog.com/courses/7906541">CSCI 4131 info</a></th>
             </tr>
+        </table>
 
-            <tr class="schedule-row" onmouseover="changeScheduleIMG(this.getAttribute('data-thumbnail'), this.getAttribute('data-thumbnail-alt'))" data-thumbnail="https://media.tenor.com/xd3erlw5b5UAAAAM/lies-mass.gif" data-thumbnail-alt="social media journalism">
+            <!-- <tr class="schedule-row" onmouseover="changeScheduleIMG(this.getAttribute('data-thumbnail'), this.getAttribute('data-thumbnail-alt'))" data-thumbnail="https://media.tenor.com/xd3erlw5b5UAAAAM/lies-mass.gif" data-thumbnail-alt="social media journalism">
                 <th>Monday</th>
                 <th>Jour 3765 lec</th>
                 <th>1:00pm - 2:15pm </th>
@@ -130,8 +131,7 @@
                 <th>home</th>
                 <th>No Phone number</th>
                 <th><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBpQcGixfQ-RibVNI4BxS1YfufI7vVxOxH5Q&s">private</a></th>
-            </tr>
-        </table>
+            </tr> -->
         <img id="schedule-image" src="https://media4.giphy.com/media/3ov9k0e23zJW5JSoO4/giphy.gif?cid=6c09b952vivl50uk7pa62o18szm4atmd8szie8v7z3xyz5bi&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g" alt="UMN gopher">
     </div>
     <script src="myschedule.js"></script>

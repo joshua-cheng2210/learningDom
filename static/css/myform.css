@@ -46,3 +46,50 @@
 body{
     padding-top: 3em;
 }
+
+.filling-form{
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* width: 80%; */
+}
+
+.filling-form th{
+    height: 1.5em;
+    /* margin: 15px; */
+    padding: 5px;
+}
+
+.filling-form select{
+    width: 150px;
+    height: 25px;
+    text-align: center;
+}
+
+table, th, tr {
+    /* width: 50%; */
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+th:hover{
+    background: #96d4e4
+}
+
+.submit-button {
+    background-color: green;
+    border-radius: 5px; 
+    width: 150px; 
+    height: 30px; 
+    color: white;
+    font-size: 1.2em; 
+    border: none; 
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: darkgreen; 
+}
